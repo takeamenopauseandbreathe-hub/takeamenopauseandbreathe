@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Take A Menopause &amp; Breathe | Lucy Telfer, Menopause Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<style>
+  :root{
+    --bg: #CBD9BC;
+    --bg-deep: #B9CAA6;
+    --cream: #FEFEFB;
+    --wine: #7C231D;
+    --wine-deep: #5E1A15;
+    --olive: #3A4632;
+    --olive-soft: #56634A;
+    --sage: #7C9473;
+    --sage-deep: #5F7758;
+    --amber: #B5740F;
+    --red-tag: #A4322A;
+
+    --font-display: 'Century Gothic', CenturyGothic, 'Questrial', 'Jost', 'Avant Garde', sans-serif;
+    --font-body: 'Century Gothic', CenturyGothic, 'Jost', 'Avant Garde', sans-serif;
+    --font-script: 'Caveat', cursive;
+
+    --max: 1180px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--olive);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color: inherit; }
+  h1,h2,h3,h4{
+    font-family: var(--font-display);
+    margin: 0 0 .5em 0;
+    font-weight: 600;
+    letter-spacing: .01em;
+    color: var(--wine);
+  }
+  p{ margin: 0 0 1em 0; }
+  .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+  section{ position: relative; }
+  .script{ font-family: var(--font-script); color: var(--olive-soft); }
+
+  a:focus-visible, button:focus-visible{ outline: 3px solid var(--amber); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:.5em;
+    font-family: var(--font-display); font-weight:600; font-size:.92rem;
+    letter-spacing:.03em; text-decoration:none;
+    padding:.9em 1.7em; border-radius: 999px; border:1.5px solid transparent;
+    cursor:pointer; transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  }
+  .btn-primary{ background: var(--wine); color: var(--cream); box-shadow: 0 6px 16px rgba(94,26,21,.28); }
+  .btn-primary:hover{ background: var(--wine-deep); transform: translateY(-2px); }
+  .btn-outline{ background: transparent; color: var(--wine); border-color: var(--wine); }
+  .btn-outline:hover{ background: var(--wine); color: var(--cream); transform: translateY(-2px); }
+  .btn-text{ background:none; border:none; color:var(--olive); text-decoration:underline; font-family: var(--font-body); font-size:.95rem; padding: .3em 0; }
+  .btn-text:hover{ color: var(--wine); }
+
+  /* ---------- Nav ---------- */
+  header{
+    position: sticky; top:0; z-index:50;
+    background: rgba(203,217,188,.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(51,67,27,.15);
+  }
+  .navbar{ display:flex; align-items:center; justify-content:space-between; padding:14px 28px; max-width:var(--max); margin:0 auto; }
+  .brand{ display:flex; align-items:center; gap:.6em; text-decoration:none; }
+  .brand img{ width:44px; height:44px; border-radius:50%; object-fit:cover; box-shadow: 0 0 0 2px var(--cream); }
+  .brand-text{ font-family: var(--font-display); font-weight:700; color:var(--wine); font-size:1rem; line-height:1.1; }
+  .brand-text span{ display:block; font-weight:400; font-size:.7em; color:var(--olive); letter-spacing:.05em; text-transform:uppercase; }
+
+  nav.links{ display:flex; align-items:center; gap:1.8em; }
+  nav.links a{ text-decoration:none; color:var(--olive); font-weight:600; font-size:.9rem; position:relative; }
+  nav.links a.btn-primary{ color: var(--cream); }
+  nav.links a:not(.btn)::after{ content:''; position:absolute; left:0; bottom:-6px; width:0%; height:2px; background:var(--wine); transition:width .25s ease; }
+  nav.links a:not(.btn):hover::after{ width:100%; }
+
+  .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+  .menu-toggle span{ display:block; width:24px; height:2px; background:var(--wine); margin:5px 0; transition:.3s; }
+
+  @media (max-width: 900px){
+    nav.links{
+      position:fixed; inset:0 0 0 auto; width:min(78vw,320px); height:100vh;
+      background: var(--bg); flex-direction:column; align-items:flex-start;
+      padding:100px 32px 32px; gap:1.5em;
+      transform: translateX(100%); transition: transform .35s ease;
+      box-shadow: -10px 0 30px rgba(0,0,0,.1);
+    }
+    nav.links.open{ transform: translateX(0); }
+    .menu-toggle{ display:block; }
+  }
+
+  .reveal{ opacity:0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------- Recurring wren + branch motif ---------- */
+  .motif-branch{
+    position:absolute; width: 150px; height:auto; opacity:.4; pointer-events:none; z-index:0;
+  }
+  .motif-branch.tl{ top:-10px; left:-6px; }
+  .motif-branch.tr{ top:-10px; right:-6px; transform: scaleX(-1); }
+  .motif-branch.br{ bottom:-10px; right:-6px; transform: scaleX(-1) scaleY(-1); }
+  .motif-branch.bl{ bottom:-10px; left:-6px; transform: scaleY(-1); }
+  .motif-branch.light{ filter: brightness(0) invert(1); opacity:.3; }
+
+  .motif-wren{
+    width: 30px; height:auto; opacity:.75; pointer-events:none;
+  }
+  .motif-wren.light{ filter: brightness(0) invert(1); opacity:.85; }
+  .section-motif-wren{
+    position:absolute; z-index:1; pointer-events:none;
+  }
+  .section-motif-wren.top-right{ top: 18px; right: 24px; }
+  .section-motif-wren.top-left{ top: 18px; left: 24px; }
+
+  .stay-card{ position:relative; }
+  .stay-card .motif-wren{ position:absolute; bottom:8px; right:8px; opacity:.5; width:22px; z-index:2; }
+
+  /* ---------- Panel section (green bg + white inset card, like the source design) ---------- */
+  .panel-section{ padding: 60px 0; }
+  .panel{
+    background: var(--cream);
+    border: 1px solid rgba(51,67,27,.12);
+    border-radius: 4px;
+    display:grid; grid-template-columns: 1.15fr .85fr;
+    min-height: 420px;
+    overflow:hidden;
+    box-shadow: 0 18px 40px rgba(51,67,27,.1);
+  }
+  .panel.flip{ grid-template-columns: .85fr 1.15fr; }
+  .panel-text{ padding: 56px 60px; display:flex; flex-direction:column; justify-content:center; position:relative; }
+  .panel-media{ position:relative; overflow:hidden; background: var(--bg-deep); }
+  .panel-media img{ width:100%; height:100%; object-fit:cover; }
+  .panel.flip .panel-media{ order:-1; }
+  .panel-branch{ position:absolute; left:-10px; top:0; height:100%; width:auto; opacity:.55; pointer-events:none; }
+  .panel-eyebrow{ font-family: var(--font-script); font-size:1.5rem; color: var(--olive-soft); margin-bottom:.1em; }
+  .panel-text h1, .panel-text h2{ position:relative; z-index:1; }
+  .panel-text p, .panel-text ul{ position:relative; z-index:1; max-width: 46ch; }
+  .panel-cta-row{ display:flex; flex-direction:column; gap:.6em; align-items:flex-start; margin-top:1.4em; position:relative; z-index:1; }
+
+  .hero-badge{
+    position:absolute; bottom: 20px; right: 20px; width: 84px; height:84px;
+    border-radius:50%; overflow:hidden; box-shadow: 0 8px 20px rgba(51,67,27,.35), 0 0 0 4px var(--cream);
+    z-index:2;
+  }
+  .hero-badge img{ width:100%; height:100%; object-fit:cover; }
+
+  @media (max-width: 880px){
+    .panel, .panel.flip{ grid-template-columns:1fr; }
+    .panel.flip .panel-media{ order:0; }
+    .panel-media{ min-height:220px; }
+    .panel-text{ padding: 38px 28px; }
+    .hero-badge{ width:64px; height:64px; bottom:14px; right:14px; }
+  }
+
+  /* ---------- Photo strip ---------- */
+  .photo-strip{ display:flex; gap:14px; margin: 34px 0 8px; overflow-x:auto; padding-bottom: 6px; }
+  .photo-strip img{
+    width: 108px; height:108px; border-radius:50%; object-fit:cover; flex-shrink:0;
+    border: 3px solid var(--cream); box-shadow: 0 6px 16px rgba(51,67,27,.18);
+  }
+
+  .signature-line{ text-align:center; margin: 6px 0 0; }
+  .signature-line span{ font-family: var(--font-script); font-size:1.5rem; color: var(--olive-soft); }
+
+  /* ---------- Services quick nav ---------- */
+  .quick-nav{ padding: 8px 0 10px; }
+  .quick-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:20px; }
+  .quick-card{
+    background: var(--cream); border-radius: 18px; padding: 26px 24px;
+    border: 1px solid rgba(51,67,27,.12); text-decoration:none; color: var(--olive);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .quick-card:hover{ transform: translateY(-4px); box-shadow: 0 14px 28px rgba(51,67,27,.14); }
+  .quick-card h3{ font-size:1.1rem; margin-bottom:.3em; }
+  .quick-card p{ font-size:.9rem; margin:0; color: var(--olive-soft); }
+  @media (max-width: 800px){ .quick-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Practical tips ---------- */
+  .tips-section{ padding: 20px 0 70px; }
+  .tips-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 2.2em; }
+  .tip-card{
+    background: var(--cream); border-radius: 16px; padding: 26px 24px;
+    border: 1px solid rgba(51,67,27,.12); box-shadow: 0 10px 22px rgba(51,67,27,.08);
+  }
+  .tip-card .tip-label{
+    font-family: var(--font-display); font-size:.7rem; font-weight:700; letter-spacing:.08em;
+    text-transform:uppercase; color: var(--sage-deep); display:block; margin-bottom:.5em;
+  }
+  .tip-card h4{ font-size:1.02rem; margin-bottom:.35em; }
+  .tip-card p{ font-size:.9rem; color: var(--olive-soft); margin:0; }
+  @media (max-width: 980px){ .tips-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 620px){ .tips-grid{ grid-template-columns: 1fr; } }
+
+  /* ---------- Testimonials ---------- */
+  .testimonials-section{ padding: 30px 0 70px; }
+  .testi-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 2.2em; }
+  .testi-card{
+    background: var(--cream); border: 1px solid rgba(51,67,27,.12); border-radius: 16px;
+    padding: 26px 24px; position:relative; box-shadow: 0 10px 22px rgba(51,67,27,.08);
+  }
+  .testi-card.placeholder{ border: 1px dashed rgba(51,67,27,.3); box-shadow:none; }
+  .testi-card .quote-mark{ font-family: var(--font-script); font-size:2.6rem; color: var(--sage-deep); line-height:1; opacity:.6; }
+  .testi-card p.testi-text{ font-style:italic; color: var(--olive-soft); margin: .3em 0 1em; font-size:.95rem; }
+  .testi-card .testi-name{ font-size:.8rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: var(--sage-deep); }
+  @media (max-width: 900px){ .testi-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Stats ---------- */
+  .stats{ padding: 30px 0 10px; }
+  .stats .grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:24px; text-align:center; }
+  .stat-num{ font-family: var(--font-display); font-size: clamp(1.9rem,3.6vw,2.6rem); color: var(--wine); font-weight:700; }
+  .stat-label{ color: var(--olive-soft); font-size:.9rem; max-width:26ch; margin:.2em auto 0; }
+  @media (max-width: 700px){ .stats .grid{ grid-template-columns:1fr; gap:28px; } }
+
+  /* ---------- Retreat dates card ---------- */
+  .dates-card{
+    background: var(--cream); border-radius: 18px; padding: 28px 30px;
+    border: 1px solid rgba(51,67,27,.12); box-shadow: 0 14px 28px rgba(51,67,27,.12);
+  }
+  .dates-card h4{ font-family: var(--font-display); font-size:1.15rem; margin-bottom:1em; color: var(--wine); }
+  .date-row{ display:flex; justify-content:space-between; align-items:center; padding: .6em 0; border-top: 1px solid rgba(51,67,27,.1); }
+  .date-row:first-of-type{ border-top:none; }
+  .date-tag{ font-size:.72rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:.3em .7em; border-radius:999px; }
+  .tag-sold{ background: rgba(164,50,42,.12); color: var(--red-tag); }
+  .tag-limited{ background: rgba(181,116,15,.14); color: var(--amber); }
+  .tag-new{ background: rgba(110,139,69,.16); color: var(--sage-deep); }
+  .dates-card .note{ font-size:.85rem; color: var(--olive-soft); margin-top:1em; margin-bottom:0; }
+
+  /* ---------- Two-column list block ---------- */
+  .list-block{ display:grid; grid-template-columns: 1fr 1fr; gap: 44px; padding: 50px 0; }
+  .list-block ul{ list-style:none; margin:1em 0 0; padding:0; display:grid; gap:.8em; }
+  .list-block li{ display:flex; gap:.6em; align-items:flex-start; color: var(--olive); }
+  .list-block li::before{ content:'✦'; color: var(--sage-deep); flex-shrink:0; margin-top:.15em; }
+  @media (max-width: 800px){ .list-block{ grid-template-columns:1fr; } }
+
+  /* ---------- Accommodation cards ---------- */
+  .feelings-banner{
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:baseline;
+    gap: .5em 1.1em; margin: 1.6em auto 0; max-width: 720px;
+  }
+  .feelings-banner .lead{
+    width:100%; text-align:center; font-family: var(--font-script); font-size:1.5rem;
+    color: var(--olive-soft); margin-bottom:.2em;
+  }
+  .feelings-banner .word{
+    font-family: var(--font-display); font-weight:700; color: var(--wine);
+    font-size: clamp(1.05rem, 2vw, 1.3rem); letter-spacing:.02em; position:relative;
+  }
+  .feelings-banner .word::after{
+    content:'·'; position:absolute; right:-0.65em; color: var(--sage-deep); font-weight:400;
+  }
+  .feelings-banner .word:last-child::after{ content:''; }
+
+  .experience-list{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:.7em; margin: 1.6em auto 0; max-width: 760px;
+  }
+  .experience-list li{
+    list-style:none; display:flex; align-items:center; gap:.5em;
+    background: var(--cream); border: 1px solid rgba(51,67,27,.15); border-radius: 999px;
+    padding: .55em 1.1em; font-size:.92rem; color: var(--olive); box-shadow: 0 6px 14px rgba(51,67,27,.08);
+  }
+  .experience-list li::before{ content:'✦'; color: var(--sage-deep); }
+
+  .stay-heading{ text-align:center; max-width: 640px; margin: 10px auto 20px; }
+  .stay-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
+  .stay-card{
+    background: var(--cream); border-radius: 18px; overflow:hidden;
+    border: 1px solid rgba(51,67,27,.12); box-shadow: 0 12px 26px rgba(51,67,27,.1);
+    display:flex; flex-direction:column;
+  }
+  .stay-photos{ display:grid; grid-template-columns: 1fr 1fr; }
+  .stay-photos img{ width:100%; height: 90px; object-fit:cover; cursor:pointer; transition: opacity .2s ease; }
+  .stay-photos img:hover{ opacity:.85; }
+  .stay-photos.count-3 img:first-child{ grid-column: 1 / -1; height: 130px; }
+  .stay-body{ padding: 20px 20px 24px; }
+  .stay-body h4{ font-size:1.05rem; margin-bottom:.35em; }
+  .stay-body p{ font-size:.87rem; color: var(--olive-soft); margin:0 0 1em; }
+  .stay-body .btn{ padding:.6em 1.3em; font-size:.78rem; }
+  @media (max-width: 980px){ .stay-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 560px){ .stay-grid{ grid-template-columns: 1fr; } }
+
+  .center-note{ text-align:center; margin-top: 3em; }
+
+  .croatia-card{
+    background: var(--cream); border-radius: 22px; padding: 40px;
+    border: 1px solid rgba(51,67,27,.12); box-shadow: 0 16px 32px rgba(51,67,27,.1);
+    text-align:center; max-width: 900px; margin: 3em auto 0;
+  }
+  .croatia-card .panel-eyebrow{ font-size:1.3rem; }
+  .croatia-card h3{ font-size:1.4rem; margin-bottom:.4em; }
+  .croatia-card p{ color: var(--olive-soft); max-width: 52ch; margin: 0 auto 1.4em; }
+  .croatia-gallery{
+    display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 1.6em 0 1.8em;
+  }
+  .croatia-gallery img{
+    width:100%; height: 130px; object-fit:cover; border-radius: 10px;
+  }
+  .croatia-gallery img:first-child{ grid-column: span 2; grid-row: span 2; height: 270px; }
+  .croatia-rooms{
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap: .6em 1.4em;
+    margin: 0 0 1.4em;
+  }
+  .croatia-rooms .room-tag{
+    font-family: var(--font-display); font-size:.85rem; font-weight:600; color: var(--olive);
+    background: var(--bg); border-radius: 999px; padding:.4em 1em;
+  }
+  .croatia-room-btns{ display:flex; flex-wrap:wrap; justify-content:center; gap: .8em; margin-bottom: 1.6em; }
+  @media (max-width: 700px){
+    .croatia-gallery{ grid-template-columns: repeat(2,1fr); }
+    .croatia-gallery img:first-child{ grid-column: span 2; height: 200px; }
+  }
+
+  /* ---------- Workplace steps ---------- */
+  .workplace{ background: var(--wine); color: var(--cream); padding: 80px 0; margin-top: 10px; }
+  .workplace h2, .workplace h3{ color: var(--cream); }
+  .workplace .grid{ display:grid; grid-template-columns: 1.15fr .85fr; gap: 54px; align-items:center; }
+  .workplace .script{ color: var(--cream); opacity:.92; }
+  .workplace ul{ list-style:none; margin: 1.2em 0 0; padding:0; display:grid; gap:.8em; }
+  .workplace li{ display:flex; gap:.6em; align-items:flex-start; color: rgba(254,254,251,.9); }
+  .workplace li::before{ content:'—'; flex-shrink:0; }
+  .workplace-quote{
+    font-family: var(--font-script); font-size: 1.7rem; line-height:1.35; color: var(--cream);
+    border-left: 3px solid rgba(254,254,251,.5); padding-left: 1em;
+  }
+  @media (max-width: 880px){ .workplace .grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Contact ---------- */
+  .contact{ padding: 90px 0 40px; }
+  .contact-grid{ display:grid; grid-template-columns: .9fr 1.1fr; gap: 50px; }
+  .contact-info h2{ font-size: clamp(1.7rem,3vw,2.3rem); }
+  .contact-channels{ list-style:none; margin: 1.4em 0 0; padding:0; display:grid; gap:.8em; font-size:.98rem; }
+  .contact-channels li strong{ color: var(--wine); }
+  .contact-form{
+    background: var(--cream); border: 1px solid rgba(51,67,27,.15); border-radius: 18px;
+    padding: 32px; box-shadow: 0 14px 30px rgba(51,67,27,.1);
+  }
+  .contact-form h3{ margin-bottom: .2em; }
+  .contact-form label{ display:block; font-size:.85rem; font-weight:600; color: var(--olive); margin: 1em 0 .35em; }
+  .contact-form input, .contact-form textarea{
+    width:100%; padding: .8em 1em; border-radius: 10px; border: 1px solid rgba(51,67,27,.25);
+    font-family: var(--font-body); font-size: .95rem; background: var(--bg); color: var(--olive);
+  }
+  .contact-form textarea{ min-height: 110px; resize: vertical; }
+  .contact-form button{ margin-top: 1.4em; width:100%; justify-content:center; }
+  .form-note{ font-size:.78rem; color: var(--olive-soft); margin-top:.8em; text-align:center; }
+  @media (max-width: 880px){ .contact-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Footer ---------- */
+  footer{ background: var(--olive); color: var(--bg); padding: 46px 0 22px; margin-top: 40px; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:26px; }
+  footer .brand-text{ color: var(--cream); }
+  footer .brand-text span{ color: var(--bg-deep); }
+  footer nav{ display:flex; gap:1.5em; flex-wrap:wrap; }
+  footer nav a{ text-decoration:none; color: var(--bg); opacity:.85; font-size:.88rem; }
+  footer nav a:hover{ opacity:1; }
+  .footer-bottom{
+    max-width: var(--max); margin: 26px auto 0; padding: 18px 28px 0;
+    border-top: 1px solid rgba(203,217,188,.18);
+    font-size:.78rem; opacity:.7; display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5em;
+  }
+</style>
+</head>
+<body>
+<!--
+  WETRAVEL SETUP NOTES
+  Once trips/packages are created in your WeTravel dashboard, go to each trip's
+  Promote > Embed tab, copy the "Book Now" widget code for that specific package,
+  and paste it inside the matching <div id="wetravel-..."> below, replacing the
+  placeholder mailto button inside it. Slots provided:
+    #wetravel-devon-beehive     -> "The Beehive" package [LIVE - uuid 9198785231]
+    #wetravel-devon-daisy       -> "Daisy" package        [LIVE - uuid 9198785231]
+    #wetravel-devon-clover      -> "Clover" package       [LIVE - uuid 9198785231]
+    #wetravel-devon-willow      -> "Willow" package       [LIVE - uuid 9198785231]
+    #wetravel-devon-dayvisitor  -> "Day visitor" package  [LIVE - uuid 9198785231]
+    #wetravel-croatia-booking   -> Croatian Retreat trip  [LIVE - uuid 1729594009]
+                                    (single trip; guest picks Twin/Double room
+                                    type inside the WeTravel checkout itself)
+
+  NOTE: Beehive/Daisy/Clover/Willow/Day visitor currently all point to the SAME
+  WeTravel trip (uuid 9198785231). If each accommodation type should actually be
+  its own bookable trip in WeTravel with its own price/availability, create a
+  separate trip per package in the dashboard and swap in its unique uuid here —
+  otherwise all four room types (and the day visitor option) will draw from one
+  shared booking/availability pool.
+
+  This is a plain HTML/CSS/JS page, so WeTravel's embed script and iframe
+  checkout will work here exactly as on a custom-built website.
+-->
+
+
+<header>
+  <div class="navbar">
+    <a href="#home" class="brand">
+      <img src="assets/logo.png" alt="Take A Menopause &amp; Breathe logo">
+      <span class="brand-text">Meno-pause<span>Take a menopause &amp; breathe</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="menuToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="links" id="navLinks">
+      <a href="#coaching">Coaching</a>
+      <a href="#retreats">Retreats</a>
+      <a href="#workplace">Workplace</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="https://calendly.com/take-a-menopause-breathe" class="btn btn-primary" target="_blank" rel="noopener">Book a Call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- HERO -->
+  <section class="panel-section">
+    <div class="wrap">
+      <div class="panel reveal">
+        <div class="panel-text">
+          <img class="panel-branch" src="assets/branch.png" alt="">
+          <h1 style="font-size:clamp(2.2rem,5vw,3.4rem); line-height:1;">Meno-pause</h1>
+          <p class="panel-eyebrow">Take a menopause &amp; breathe</p>
+          <p>Are you navigating the physical, emotional and mental side of menopause? You deserve calm, compassionate and practical support to help you through it. I'm Lucy — a former Advanced Skills Teacher and breast cancer survivor who's lived through menopause twice, now your qualified and certified Menopause Coach. BMI affiliate.</p>
+          <div class="panel-cta-row">
+            <a href="https://calendly.com/take-a-menopause-breathe" class="btn btn-primary" target="_blank" rel="noopener">Join the retreat priority list →</a>
+            <a href="#coaching" class="btn-text">Or explore 1:1 menopause coaching</a>
+            <a href="#workplace" class="btn-text">Find out about business support</a>
+          </div>
+        </div>
+        <div class="panel-media">
+          <img src="assets/photos/sea-swim.jpg" alt="Wild swimmer at sunrise, calm open water">
+          <div class="hero-badge"><img src="assets/logo.png" alt="Take A Menopause &amp; Breathe logo"></div>
+        </div>
+      </div>
+      <div class="signature-line reveal" style="margin-top:26px; display:flex; align-items:center; justify-content:center; gap:.6em;"><img class="motif-wren" src="assets/wren.png" alt=""><span>We've got this.</span></div>
+
+      <div class="photo-strip reveal">
+        <img src="assets/photos/flower-1.jpg" alt="">
+        <img src="assets/photos/flower-2.jpg" alt="">
+        <img src="assets/photos/flower-3.jpg" alt="">
+        <img src="assets/photos/flower-4.jpg" alt="">
+        <img src="assets/photos/flower-5.jpg" alt="">
+        <img src="assets/photos/flower-6.jpg" alt="">
+        <img src="assets/photos/flower-7.jpg" alt="">
+      </div>
+      <p class="reveal" style="text-align:center; max-width:640px; margin:18px auto 0; color:var(--olive-soft);">Whatever stage you're at, I'm here to help — with 1:1 coaching, retreats, or practical support for your business. Let's help you face and embrace this next stage of your life.</p>
+    </div>
+  </section>
+
+  <!-- QUICK NAV -->
+  <section class="quick-nav">
+    <img class="motif-branch tr" src="assets/branch.png" alt="" style="width:110px; opacity:.3;">
+    <div class="wrap">
+      <div class="quick-grid">
+        <a href="#coaching" class="quick-card reveal">
+          <h3>1:1 Coaching</h3>
+          <p>The Menopause Plan — personalised coaching to help you thrive, not just survive.</p>
+        </a>
+        <a href="#retreats" class="quick-card reveal">
+          <h3>Retreats</h3>
+          <p>The Devon Retreat — find yourself in nature, over four days with other women who get it.</p>
+        </a>
+        <a href="#workplace" class="quick-card reveal">
+          <h3>Workplace Support</h3>
+          <p>Menopause Action Plans for employers, ahead of the April 2027 requirement.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACHING -->
+  <section class="panel-section" id="coaching">
+    <div class="wrap">
+      <div class="panel flip reveal">
+        <div class="panel-text">
+          <img class="panel-branch" style="left:auto; right:-10px; transform:scaleX(-1);" src="assets/branch.png" alt="">
+          <h2>I can support you through menopause with <strong style="color:var(--wine);">coaching</strong></h2>
+          <p>Did you know that 1 in 10 women leave their jobs because of menopause? Or that menopause is cited as a cause in 73% of midlife divorces?</p>
+          <p>With the amount of change going on in your body through menopause, isn't it time you gave yourself the same attention we give to puberty and pregnancy? You owe it to yourself.</p>
+          <p>I will work with you through a powerful coaching plan developed by world renowned menopause coach Lauren Chiren of Women of a Certain Stage, that can transform your experience of menopause.</p>
+          <p>If brain fog has you losing words mid-sentence or forgetting why you walked into a room, you're not losing your mind — it's a recognised part of menopause, and there are practical techniques to work with it. Together, we'll also build your confidence back up and bring your anxiety down, so you feel like yourself again.</p>
+          <p>And support doesn't stop when the sessions end — you'll get follow-up check-ins to help what you've learned actually stick.</p>
+          <p>Email me on <a href="mailto:takeamenopauseandbreathe@gmail.com" style="color:var(--wine); font-weight:600;">takeamenopauseandbreathe@gmail.com</a> for more information and to make a plan.</p>
+          <a href="https://calendly.com/take-a-menopause-breathe" class="btn btn-primary" style="margin-top:.6em;" target="_blank" rel="noopener">Book a Menopause Clarity Call</a>
+        </div>
+        <div class="panel-media" style="display:flex; align-items:center; justify-content:center; background:var(--cream);">
+          <div style="text-align:center;">
+            <img class="motif-wren" src="assets/wren.png" alt="" style="margin:0 auto 14px;">
+            <p class="script" style="font-size:2rem; text-align:center; padding: 0 30px; margin:0;">Small changes<br>make a huge<br>difference</p>
+          </div>
+        </div>
+      </div>
+      <div class="photo-strip reveal" style="justify-content:center;">
+        <img src="assets/photos/blossom-1.jpg" alt="">
+        <img src="assets/photos/blossom-2.jpg" alt="">
+        <img src="assets/photos/blossom-3.jpg" alt="">
+        <img src="assets/photos/blossom-4.jpg" alt="">
+        <img src="assets/photos/blossom-5.jpg" alt="">
+        <img src="assets/photos/blossom-6.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICAL TIPS -->
+  <section class="tips-section" id="tips">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="panel-eyebrow" style="display:block;">Rational, evidence-based support</span>
+        <h2>Six things you can do today to regain control</h2>
+        <p style="color:var(--olive-soft);">Coaching isn't just about how you feel — it's about practical tools that make a measurable difference to your symptoms.</p>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card reveal">
+          <span class="tip-label">Track</span>
+          <h4>Notice your patterns</h4>
+          <p>Keep a simple note of sleep, mood and energy for two weeks. Patterns show you what actually helps, rather than guessing.</p>
+        </div>
+        <div class="tip-card reveal">
+          <span class="tip-label">Hydrate</span>
+          <h4>Drink more than you think you need</h4>
+          <p>Menopause blunts your sense of thirst. Even mild dehydration can make brain fog and hot flushes worse — so drink on a schedule, not just when you feel thirsty.</p>
+        </div>
+        <div class="tip-card reveal">
+          <span class="tip-label">Routine</span>
+          <h4>Anchor your morning and evening</h4>
+          <p>A short, calm routine at either end of the day steadies your nervous system and improves sleep quality over time.</p>
+        </div>
+        <div class="tip-card reveal">
+          <span class="tip-label">Move</span>
+          <h4>Build strength and flexibility</h4>
+          <p>Regular movement supports mood and energy now, and protects your bones and heart for the long term.</p>
+        </div>
+        <div class="tip-card reveal">
+          <span class="tip-label">Boundaries</span>
+          <h4>Protect your energy</h4>
+          <p>Saying no where you can isn't indulgent — it's one of the most effective, practical tools you have for managing symptoms.</p>
+        </div>
+        <div class="tip-card reveal">
+          <span class="tip-label">Support</span>
+          <h4>Ask for the right help</h4>
+          <p>At home and at work. A clear conversation about what you need is often the single biggest change you can make.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <img class="motif-branch bl" src="assets/branch.png" alt="" style="width:120px; opacity:.3;">
+    <div class="wrap">
+      <div class="grid">
+        <div class="reveal">
+          <div class="stat-num">1 in 10</div>
+          <p class="stat-label">women leave the workplace due to menopause symptoms</p>
+        </div>
+        <div class="reveal">
+          <div class="stat-num">73%</div>
+          <p class="stat-label">of midlife divorces list menopause as a contributing factor</p>
+        </div>
+        <div class="reveal">
+          <div class="stat-num">2027</div>
+          <p class="stat-label">the year Menopause Action Plans become mandatory for large employers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="panel-section" id="about">
+    <div class="wrap">
+      <div class="panel reveal">
+        <div class="panel-text">
+          <img class="panel-branch" src="assets/branch.png" alt="">
+          <div style="display:flex; align-items:center; gap:1.1em; margin-bottom:.4em;">
+            <img src="assets/photos/lucy-about.jpg" alt="Lucy Telfer" style="width:78px; height:78px; border-radius:50%; object-fit:cover; border:3px solid var(--bg);">
+            <div>
+              <h2 style="margin-bottom:0;">About me</h2>
+              <p style="margin:0; font-size:.8rem; color:var(--olive-soft); letter-spacing:.03em;">BA, PGCE, MEd, Menopause Coach Diploma</p>
+            </div>
+          </div>
+          <p>Welcome! I'm Lucy, your Menopause Coach. I create space for you to think about this next stage of your life — how you want to live it, and what you want from it. To thrive, not just survive.</p>
+          <p>Menopause is inevitable, how you experience it isn't. I'll support you with personalised coaching, intensive retreats, and practical workplace support.</p>
+          <p>Contact me on <a href="mailto:takeamenopauseandbreathe@gmail.com" style="color:var(--wine); font-weight:600;">takeamenopauseandbreathe@gmail.com</a> to book a call.</p>
+          <a href="#contact" class="btn btn-outline" style="margin-top:.6em;">Get in touch</a>
+        </div>
+        <div class="panel-media">
+          <img src="assets/photos/blossom-tree-big.jpg" alt="Blossom tree in spring">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="panel-eyebrow" style="display:block;">In their words</span>
+        <h2>What clients say</h2>
+        <p style="color:var(--olive-soft);">Real feedback from the women and businesses I've worked with — added here as it comes in.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">Lucy creates a space where you feel completely safe to be honest. She listens in a way that's incredibly rare — not just to the words you're saying, but to what's underneath them. She has a remarkable ability to make you feel truly seen and understood. I always leave a coaching conversation feeling clearer, more empowered and more confident in myself.</p>
+          <p class="testi-name">— Carly, Coaching Client</p>
+        </div>
+        <div class="testi-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">It's the first time I've felt heard.</p>
+          <p class="testi-name">— Attendee, menopause talk</p>
+        </div>
+        <div class="testi-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">Lucy has a natural ability to put her audience at ease with her humour and interactive approach. She was both engaging and informative, providing crucial information to the audience who left feeling empowered and inspired. One attendee said she now understood the symptoms she was experiencing and why, while another said she felt "armed with information" to help manage her own.</p>
+          <p class="testi-name">— Anju Newcombe, Partner, Solicitors' Firm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETREATS -->
+  <section class="panel-section" id="retreats">
+    <img class="motif-branch tl" src="assets/branch.png" alt="" style="width:150px;">
+    <img class="motif-branch br" src="assets/branch.png" alt="" style="width:150px;">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align:center; max-width:680px; margin:0 auto 2em; position:relative;">
+        <img class="motif-wren" src="assets/wren.png" alt="" style="margin:0 auto 10px;">
+        <h2>The Devon Retreat — find yourself in nature.</h2>
+        <p class="script" style="font-size:1.6rem; margin:.2em 0 .6em;">Small hinges swing big doors.</p>
+        <p style="color:var(--olive-soft);">Set deep in the Devon countryside, this retreat is about reconnecting with yourself through nature — woodland walks, log fires, wild mornings and quiet space to think, away from screens and everyday noise.</p>
+        <p style="color:var(--olive-soft);">Give yourself the time and space that you need to think about where you've been, where you are, and where you want to be — with other women experiencing the same stage of life. You are not alone.</p>
+        <p style="color:var(--olive-soft);">On the Devon retreat site you have the option of a croft style cottage, a luxury shepherd's hut, a log cabin or a gypsy caravan. You are welcome to bring a campervan. If the onsite accommodation is all booked you can join us as a dayboarder and we will send you a list of local places to stay.</p>
+        <div class="feelings-banner">
+          <span class="lead">You'll walk away feeling</span>
+          <span class="word">Calm</span><span class="word">Empowered</span><span class="word">Nurtured</span><span class="word">Confident</span><span class="word">Purposeful</span><span class="word">Rested</span>
+        </div>
+        <ul class="experience-list">
+          <li>Deep relaxation</li>
+          <li>Nurturing food</li>
+          <li>A supporting community</li>
+          <li>Time to reflect</li>
+          <li>Goal setting that suits your own situation</li>
+        </ul>
+      </div>
+
+      <div class="list-block" style="padding-top:0;">
+        <div class="reveal">
+          <h3 style="font-size:1.2rem;">What happens on the retreat doesn't stay on the retreat!</h3>
+          <p style="color:var(--olive-soft);">You'll be introduced to tried and tested techniques for reducing menopause symptoms that you can apply to your daily life:</p>
+          <ul>
+            <li>Nutrition that supports your body through the changes</li>
+            <li>Techniques that help you cope with and reduce symptoms</li>
+            <li>Movement that helps with strength and flexibility</li>
+            <li>The opportunity to consider this next phase of life</li>
+            <li>A group that "gets it" and a safe space to talk</li>
+            <li>A bit of luxury, being looked after, and you time</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="dates-card">
+            <h4>The Devon Retreat</h4>
+            <div class="date-row"><span>2–5 October</span><span class="date-tag tag-limited">Limited Availability</span></div>
+            <div class="date-row"><span>19–22 March</span><span class="date-tag tag-new">Just Announced</span></div>
+            <p class="note">More dates coming soon. Email me at <a href="mailto:takeamenopauseandbreathe@gmail.com" style="color:var(--wine); font-weight:600;">takeamenopauseandbreathe@gmail.com</a> for news.</p>
+          </div>
+          <h3 style="font-size:1.1rem; margin-top:1.6em;">You'll leave with</h3>
+          <ul>
+            <li><strong style="color:var(--wine);">Strategies</strong>&nbsp;to address your symptoms</li>
+            <li><strong style="color:var(--wine);">Goals</strong>&nbsp;for the next stage of your life</li>
+            <li><strong style="color:var(--wine);">Tools</strong>&nbsp;for combating brain fog, fatigue and low mood</li>
+            <li><strong style="color:var(--wine);">Techniques</strong>&nbsp;to grow your confidence and decrease anxiety</li>
+            <li><strong style="color:var(--wine);">Follow-up support</strong>&nbsp;— a call after the retreat to check in on your progress</li>
+            <li>A booklet of delicious recipes designed to reduce inflammation</li>
+            <li>A clear vision of what you want, deep rest and relaxation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stay-heading reveal">
+        <h3 style="font-size:1.3rem;">Where you'll stay</h3>
+      </div>
+
+      <div class="photo-strip reveal" style="justify-content:center; margin-bottom:8px;">
+        <img src="assets/photos/retreat-horse.jpg" alt="The Devon retreat site, horse grazing in the field">
+        <img src="assets/photos/retreat-hottub.jpg" alt="Private hot tub on site at the Devon retreat">
+        <img src="assets/photos/retreat-cottage.jpg" alt="Woodland path across the Devon retreat site">
+      </div>
+      <p class="reveal" style="text-align:center; font-size:.85rem; color:var(--olive-soft); margin-top:0;">The Devon retreat site</p>
+
+      <div class="stay-grid">
+        <div class="stay-card reveal">
+          <img class="motif-wren" src="assets/wren.png" alt="">
+          <div class="stay-photos">
+            <img src="assets/photos/beehive-1.jpg" alt="The Beehive croft cottage dining area">
+            <img src="assets/photos/beehive-2.jpg" alt="The Beehive kitchen and living space">
+            <img src="assets/photos/beehive-3.jpg" alt="The Beehive lounge with log burner">
+            <img src="assets/photos/beehive-4.jpg" alt="The Beehive hot tub and garden">
+          </div>
+          <div class="stay-body">
+            <h4>The Beehive</h4>
+            <p>One bedroom with a double bed and a single bed, plus a wet room, kitchen and living area with a log burner. Light and airy, with your own garden and hot tub — book this if you're coming with a friend and want to share the experience together.</p>
+            <!-- WeTravel embed slot: paste the Book Now widget code for "The Beehive" package here -->
+            <div id="wetravel-devon-beehive" style="text-align:center;">
+              <button class="wtrvl-checkout_button" id="wetravel_button_widget_beehive" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2696244" data-uuid="9198785231" href="https://www.wetravel.com/checkout_embed?uuid=9198785231" style="background-color:#33ae3f;color:#ffffff;border: 0px;border-radius: 5px;font-family: 'Poppins', sans-serif;font-weight: 400;font-size: 14px;-webkit-font-smoothing: antialiased;text-transform: capitalize;padding: 13px 24px;text-decoration: none;text-align: center;line-height: 14px;display: inline-block; cursor: pointer;">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="stay-card reveal">
+          <img class="motif-wren" src="assets/wren.png" alt="">
+          <div class="stay-photos count-3">
+            <img src="assets/photos/daisy-1.jpg" alt="Daisy log cabin living area">
+            <img src="assets/photos/daisy-2.jpg" alt="Daisy log cabin deck">
+            <img src="assets/photos/daisy-3.jpg" alt="Daisy log cabin exterior amongst the trees">
+          </div>
+          <div class="stay-body">
+            <h4>Daisy</h4>
+            <p>You'll have a double bed, kitchen, living area and wet room, with your own log burner and hot tub. Set amongst the trees — choose this if you want your retreat to feel like a walk into nature.</p>
+            <!-- WeTravel embed slot: paste the Book Now widget code for "Daisy" package here -->
+            <div id="wetravel-devon-daisy" style="text-align:center;">
+              <button class="wtrvl-checkout_button" id="wetravel_button_widget_daisy" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2696244" data-uuid="9198785231" href="https://www.wetravel.com/checkout_embed?uuid=9198785231" style="background-color:#33ae3f;color:#ffffff;border: 0px;border-radius: 5px;font-family: 'Poppins', sans-serif;font-weight: 400;font-size: 14px;-webkit-font-smoothing: antialiased;text-transform: capitalize;padding: 13px 24px;text-decoration: none;text-align: center;line-height: 14px;display: inline-block; cursor: pointer;">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="stay-card reveal">
+          <img class="motif-wren" src="assets/wren.png" alt="">
+          <div class="stay-photos">
+            <img src="assets/photos/clover-1.jpg" alt="Clover shepherd's hut living space">
+            <img src="assets/photos/clover-2.jpg" alt="Clover shepherd's hut ensuite">
+            <img src="assets/photos/clover-3.jpg" alt="Clover shepherd's hut exterior">
+            <img src="assets/photos/clover-4.jpg" alt="Clover shepherd's hut bedroom loft">
+          </div>
+          <div class="stay-body">
+            <h4>Clover</h4>
+            <p>You'll get a shepherd's hut with a difference, styled on a Landrover Defender — rugged on the outside, properly comfortable within. Ensuite, log burner and hot tub included. Choose this if you want cosy and secluded.</p>
+            <!-- WeTravel embed slot: paste the Book Now widget code for "Clover" package here -->
+            <div id="wetravel-devon-clover" style="text-align:center;">
+              <button class="wtrvl-checkout_button" id="wetravel_button_widget_clover" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2696244" data-uuid="9198785231" href="https://www.wetravel.com/checkout_embed?uuid=9198785231" style="background-color:#33ae3f;color:#ffffff;border: 0px;border-radius: 5px;font-family: 'Poppins', sans-serif;font-weight: 400;font-size: 14px;-webkit-font-smoothing: antialiased;text-transform: capitalize;padding: 13px 24px;text-decoration: none;text-align: center;line-height: 14px;display: inline-block; cursor: pointer;">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="stay-card reveal">
+          <img class="motif-wren" src="assets/wren.png" alt="">
+          <div class="stay-photos count-3">
+            <img src="assets/photos/willow-1.jpg" alt="Willow bowtop wagon exterior in the woodland">
+            <img src="assets/photos/willow-2.jpg" alt="Willow bowtop wagon interior bed">
+            <img src="assets/photos/willow-3.jpg" alt="Willow bowtop wagon detail">
+          </div>
+          <div class="stay-body">
+            <h4>Willow</h4>
+            <p>You'll stay in a bowtop wagon that's travelled the roads and now rests in the woodland, with shower, loo and kitchen facilities close by. Choose this if you want something romantic, whimsical, and a little different.</p>
+            <!-- WeTravel embed slot: paste the Book Now widget code for "Willow" package here -->
+            <div id="wetravel-devon-willow" style="text-align:center;">
+              <button class="wtrvl-checkout_button" id="wetravel_button_widget_willow" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2696244" data-uuid="9198785231" href="https://www.wetravel.com/checkout_embed?uuid=9198785231" style="background-color:#33ae3f;color:#ffffff;border: 0px;border-radius: 5px;font-family: 'Poppins', sans-serif;font-weight: 400;font-size: 14px;-webkit-font-smoothing: antialiased;text-transform: capitalize;padding: 13px 24px;text-decoration: none;text-align: center;line-height: 14px;display: inline-block; cursor: pointer;">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="text-align:center; max-width:560px; margin:2em auto 0;">
+        <h4 style="margin-bottom:.3em;">Joining as a day visitor?</h4>
+        <p style="color:var(--olive-soft); font-size:.95rem;">If you'd like to join a retreat as a dayboarder rather than staying overnight, you can book your place below, or email me on <a href="mailto:takeamenopauseandbreathe@gmail.com" style="color:var(--wine); font-weight:600;">takeamenopauseandbreathe@gmail.com</a> for availability.</p>
+        <div id="wetravel-devon-dayvisitor" style="text-align:center;">
+          <button class="wtrvl-checkout_button" id="wetravel_button_widget_dayvisitor" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2696244" data-uuid="9198785231" href="https://www.wetravel.com/checkout_embed?uuid=9198785231" style="background-color:#33ae3f;color:#ffffff;border: 0px;border-radius: 5px;font-family: 'Poppins', sans-serif;font-weight: 400;font-size: 14px;-webkit-font-smoothing: antialiased;text-transform: capitalize;padding: 13px 24px;text-decoration: none;text-align: center;line-height: 14px;display: inline-block; cursor: pointer;">Book Now</button>
+        </div>
+      </div>
+
+      <div class="croatia-card reveal">
+        <span class="panel-eyebrow script">6–9 April 2027</span>
+        <h3>The Croatian Retreat</h3>
+        <p>Being nurtured, in luxury. Think sun-warmed days, beautiful surroundings and every detail taken care of, so all you have to do is receive it.</p>
+        <div class="croatia-gallery">
+          <img src="assets/photos/croatia-pool-night.jpg" alt="Croatian villa pool at night">
+          <img src="assets/photos/croatia-pool-day.jpg" alt="Croatian villa pool and terrace">
+          <img src="assets/photos/croatia-terrace.jpg" alt="Croatian villa terrace view over the garden">
+          <img src="assets/photos/croatia-hottub-sauna.jpg" alt="Croatian villa hot tub and sauna">
+          <img src="assets/photos/croatia-dining.jpg" alt="Croatian villa stone-walled dining room">
+          <img src="assets/photos/croatia-bedroom-1.jpg" alt="Croatian villa bedroom with beamed ceiling">
+        </div>
+        <div class="croatia-rooms">
+          <span class="room-tag">2× Twin rooms</span>
+          <span class="room-tag">3× Double rooms</span>
+          <span class="room-tag">All ensuite</span>
+        </div>
+        <!-- WeTravel embed slot: single "Book Now" widget for the Croatian Retreat trip — room type is chosen inside the WeTravel checkout -->
+        <div class="croatia-room-btns" style="justify-content:center;">
+          <div id="wetravel-croatia-booking" style="text-align:center;">
+            <button class="wtrvl-checkout_button" id="wetravel_button_widget_croatia" data-env="https://www.wetravel.com" data-version="v0.4" data-uid="2696244" data-uuid="1729594009" href="https://www.wetravel.com/checkout_embed?uuid=1729594009" style="background-color:#33ae3f;color:#ffffff;border: 0px;border-radius: 5px;font-family: 'Poppins', sans-serif;font-weight: 400;font-size: 14px;-webkit-font-smoothing: antialiased;text-transform: capitalize;padding: 13px 24px;text-decoration: none;text-align: center;line-height: 14px;display: inline-block; cursor: pointer;">Book Now</button>
+          </div>
+        </div>
+        <p style="margin-top:0;">Join us 6–9 April 2027 — register your interest now to secure your place before booking opens to everyone.</p>
+        <a href="mailto:takeamenopauseandbreathe@gmail.com?subject=Croatian%20Retreat%20interest" class="btn btn-outline">Register Your Interest</a>
+      </div>
+
+      <div class="center-note reveal">
+        <a href="https://calendly.com/take-a-menopause-breathe" class="btn btn-primary" target="_blank" rel="noopener">Join the Devon Retreat Interest List</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKPLACE -->
+  <section class="workplace" id="workplace">
+    <img class="motif-branch tr light" src="assets/branch.png" alt="" style="width:150px;">
+    <img class="motif-branch bl light" src="assets/branch.png" alt="" style="width:150px;">
+    <div class="wrap">
+      <div class="grid">
+        <div class="reveal">
+          <img class="motif-wren light" src="assets/wren.png" alt="" style="margin-bottom:14px;">
+          <h2>Does your business need a Menopause Action Plan? I can help</h2>
+          <p style="color:rgba(254,254,251,.85);">Are you unclear about what you currently offer employees experiencing menopause? Could you do with some strategies to develop your offering and meet the new guidelines and legislation?</p>
+          <p style="color:rgba(254,254,251,.85);">From April 2027, businesses with 250+ employees are required to have a Menopause Action Plan. If you're an employer with under 250 employees, why not get ahead of the game?</p>
+          <p style="color:rgba(254,254,251,.85);">It's not just about compliance. Retaining your experienced employees and decreasing sick leave makes good business sense. I can work with you on this.</p>
+          <ul>
+            <li>I can work with you to audit your current provision</li>
+            <li>I can help you write your Action Plan</li>
+            <li>I can set up supportive partnerships in your organisation</li>
+            <li>I can train your managers to support staff with menopause symptoms</li>
+            <li>I can suggest adjustments that can be made to your working environment</li>
+            <li>I'll provide ongoing follow-up support to help your Action Plan stick, not just sit in a drawer</li>
+          </ul>
+          <a href="https://calendly.com/take-a-menopause-breathe" class="btn" style="background:var(--cream); color:var(--wine); margin-top:1.6em;" target="_blank" rel="noopener">Book a Workplace Consultation</a>
+        </div>
+        <div class="reveal">
+          <p class="workplace-quote">But most importantly, I can help you to retain your employees.</p>
+          <p style="margin-top:1.6em;"><a href="#contact" style="color:var(--cream); font-weight:600; text-decoration:underline;">Get in touch</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <img class="motif-branch bl" src="assets/branch.png" alt="" style="width:150px;">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <img class="motif-wren" src="assets/wren.png" alt="" style="margin-bottom:10px;">
+          <h2>Contact</h2>
+          <p style="color:var(--olive-soft);">Ready to talk? Get in touch at <a href="mailto:takeamenopauseandbreathe@gmail.com" style="color:var(--wine); font-weight:600;">takeamenopauseandbreathe@gmail.com</a>, book straight into my diary, or find me online.</p>
+          <ul class="contact-channels">
+            <li><strong>Email:</strong> takeamenopauseandbreathe@gmail.com</li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lucy-telfer-16412733/" target="_blank" rel="noopener">Lucy Telfer</a></li>
+            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/takeamenopauseandbreathe/" target="_blank" rel="noopener">@takeamenopauseandbreathe</a></li>
+            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61587126271412" target="_blank" rel="noopener">Take A Menopause & Breathe</a></li>
+          </ul>
+          <a href="https://calendly.com/take-a-menopause-breathe" class="btn btn-primary" style="margin-top:1.6em;" target="_blank" rel="noopener">Book a Menopause Clarity Call</a>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <h3>Send a message</h3>
+          <p style="font-size:.88rem; color:var(--olive-soft); margin:0;">I'll get back to you within a couple of days.</p>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Leave a message</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <p class="form-note">This opens your email app with your message ready to send to takeamenopauseandbreathe@gmail.com.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#home" class="brand">
+      <img src="assets/logo.png" alt="Take A Menopause &amp; Breathe logo" style="box-shadow:0 0 0 2px rgba(254,254,251,.35);">
+      <span class="brand-text">Meno-pause<span>Take a menopause &amp; breathe</span></span>
+    </a>
+    <nav>
+      <a href="#coaching">Coaching</a>
+      <a href="#retreats">Retreats</a>
+      <a href="#workplace">Workplace</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Take A Menopause &amp; Breathe. All rights reserved.</span>
+    <span>Menopause is inevitable. How we experience it isn't.</span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  revealEls.forEach(el => io.observe(el));
+
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const subject = encodeURIComponent('Message from ' + name + ' via website');
+    const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+    window.location.href = 'mailto:takeamenopauseandbreathe@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+
+<script src="https://cdn.wetravel.com/widgets/embed_checkout.js"></script>
+
+</body>
+</html>
