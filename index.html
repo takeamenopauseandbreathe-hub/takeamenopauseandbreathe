@@ -94,14 +94,20 @@
   nav.links a:not(.btn)::after{ content:''; position:absolute; left:0; bottom:-6px; width:0%; height:2px; background:var(--wine); transition:width .25s ease; }
   nav.links a:not(.btn):hover::after{ width:100%; }
 
-  .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
+  .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; position:relative; z-index:60; }
   .menu-toggle span{ display:block; width:24px; height:2px; background:var(--wine); margin:5px 0; transition:.3s; }
+  .menu-toggle.open span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+  .menu-toggle.open span:nth-child(2){ opacity:0; }
+  .menu-toggle.open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-backdrop{ display:none; position:fixed; inset:0; background:rgba(51,67,27,.35); z-index:40; opacity:0; transition:opacity .3s ease; }
+  .nav-backdrop.open{ display:block; opacity:1; }
 
   @media (max-width: 900px){
     nav.links{
       position:fixed; inset:0 0 0 auto; width:min(78vw,320px); height:100vh;
       background: var(--bg); flex-direction:column; align-items:flex-start;
-      padding:100px 32px 32px; gap:1.5em;
+      padding:100px 32px 32px; gap:1.5em; z-index:50;
       transform: translateX(100%); transition: transform .35s ease;
       box-shadow: -10px 0 30px rgba(0,0,0,.1);
     }
@@ -419,11 +425,12 @@
     <nav class="links" id="navLinks">
       <a href="#coaching">Coaching</a>
       <a href="#retreats">Retreats</a>
-      <a href="#workplace">Workplace</a>
+      <a href="#workplace">Workplace Support</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="https://calendly.com/take-a-menopause-breathe" class="btn btn-primary" target="_blank" rel="noopener">Book a Call</a>
+      <a href="https://calendly.com/takeamenopauseandbreathe/new-meeting" class="btn btn-primary" target="_blank" rel="noopener">Book a Call</a>
     </nav>
+    <div class="nav-backdrop" id="navBackdrop"></div>
   </div>
 </header>
 
@@ -439,7 +446,7 @@
           <p class="panel-eyebrow">Take a menopause &amp; breathe</p>
           <p>Are you navigating the physical, emotional and mental side of menopause? You deserve calm, compassionate and practical support to help you through it. I'm Lucy — a former Advanced Skills Teacher and breast cancer survivor who's lived through menopause twice, now your qualified and certified Menopause Coach. BMI affiliate.</p>
           <div class="panel-cta-row">
-            <a href="https://calendly.com/take-a-menopause-breathe" class="btn btn-primary" target="_blank" rel="noopener">Join the retreat priority list →</a>
+            <a href="https://calendly.com/takeamenopauseandbreathe/new-meeting" class="btn btn-primary" target="_blank" rel="noopener">Join the retreat priority list →</a>
             <a href="#coaching" class="btn-text">Or explore 1:1 menopause coaching</a>
             <a href="#workplace" class="btn-text">Find out about business support</a>
           </div>
@@ -498,7 +505,7 @@
           <p>If brain fog has you losing words mid-sentence or forgetting why you walked into a room, you're not losing your mind — it's a recognised part of menopause, and there are practical techniques to work with it. Together, we'll also build your confidence back up and bring your anxiety down, so you feel like yourself again.</p>
           <p>And support doesn't stop when the sessions end — you'll get follow-up check-ins to help what you've learned actually stick.</p>
           <p>Email me on <a href="mailto:takeamenopauseandbreathe@gmail.com" style="color:var(--wine); font-weight:600;">takeamenopauseandbreathe@gmail.com</a> for more information and to make a plan.</p>
-          <a href="https://calendly.com/take-a-menopause-breathe" class="btn btn-primary" style="margin-top:.6em;" target="_blank" rel="noopener">Book a Menopause Clarity Call</a>
+          <a href="https://calendly.com/takeamenopauseandbreathe/new-meeting" class="btn btn-primary" style="margin-top:.6em;" target="_blank" rel="noopener">Book a Menopause Clarity Call</a>
         </div>
         <div class="panel-media" style="display:flex; align-items:center; justify-content:center; background:var(--cream);">
           <div style="text-align:center;">
@@ -809,7 +816,7 @@
       </div>
 
       <div class="center-note reveal">
-        <a href="https://calendly.com/take-a-menopause-breathe" class="btn btn-primary" target="_blank" rel="noopener">Join the Devon Retreat Interest List</a>
+        <a href="https://calendly.com/takeamenopauseandbreathe/new-meeting" class="btn btn-primary" target="_blank" rel="noopener">Join the Devon Retreat Interest List</a>
       </div>
     </div>
   </section>
@@ -834,7 +841,7 @@
             <li>I can suggest adjustments that can be made to your working environment</li>
             <li>I'll provide ongoing follow-up support to help your Action Plan stick, not just sit in a drawer</li>
           </ul>
-          <a href="https://calendly.com/take-a-menopause-breathe" class="btn" style="background:var(--cream); color:var(--wine); margin-top:1.6em;" target="_blank" rel="noopener">Book a Workplace Consultation</a>
+          <a href="https://calendly.com/takeamenopauseandbreathe/new-meeting" class="btn" style="background:var(--cream); color:var(--wine); margin-top:1.6em;" target="_blank" rel="noopener">Book a Workplace Consultation</a>
         </div>
         <div class="reveal">
           <p class="workplace-quote">But most importantly, I can help you to retain your employees.</p>
@@ -859,7 +866,7 @@
             <li><strong>Instagram:</strong> <a href="https://www.instagram.com/takeamenopauseandbreathe/" target="_blank" rel="noopener">@takeamenopauseandbreathe</a></li>
             <li><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61587126271412" target="_blank" rel="noopener">Take A Menopause & Breathe</a></li>
           </ul>
-          <a href="https://calendly.com/take-a-menopause-breathe" class="btn btn-primary" style="margin-top:1.6em;" target="_blank" rel="noopener">Book a Menopause Clarity Call</a>
+          <a href="https://calendly.com/takeamenopauseandbreathe/new-meeting" class="btn btn-primary" style="margin-top:1.6em;" target="_blank" rel="noopener">Book a Menopause Clarity Call</a>
         </div>
         <form class="contact-form reveal" id="contactForm">
           <h3>Send a message</h3>
@@ -888,7 +895,7 @@
     <nav>
       <a href="#coaching">Coaching</a>
       <a href="#retreats">Retreats</a>
-      <a href="#workplace">Workplace</a>
+      <a href="#workplace">Workplace Support</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -902,14 +909,21 @@
 <script>
   const toggle = document.getElementById('menuToggle');
   const nav = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  const backdrop = document.getElementById('navBackdrop');
+  function closeMenu(){
     nav.classList.remove('open');
+    toggle.classList.remove('open');
+    backdrop.classList.remove('open');
     toggle.setAttribute('aria-expanded', false);
-  }));
+  }
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    backdrop.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+  backdrop.addEventListener('click', closeMenu);
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
