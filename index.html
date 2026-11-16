@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Take A Menopause &amp; Breathe | Lucy Telfer, Menopause Coach</title>
+<title>Menopause After Cancer Coaching &amp; Retreats | Take A Menopause &amp; Breathe</title>
+<meta name="description" content="Menopause after cancer can change everything. Lucy offers practical, compassionate coaching, the Golden Seams System and restorative retreats in Devon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 <style>
   :root{
-    --bg: #CBD9BC;
-    --bg-deep: #B9CAA6;
-    --cream: #FEFEFB;
-    --wine: #7C231D;
-    --wine-deep: #5E1A15;
-    --olive: #3A4632;
-    --olive-soft: #56634A;
-    --sage: #7C9473;
-    --sage-deep: #5F7758;
-    --amber: #B5740F;
+    --bg: #FAF7F0;
+    --bg-deep: #E9EFD9;
+    --cream: #FFFFFF;
+    --wine: #5A203C;
+    --wine-deep: #44152D;
+    --olive: #254A35;
+    --olive-soft: #3E6049;
+    --sage: #A8C83D;
+    --sage-deep: #567226;
+    --amber: #C5A46D;
     --red-tag: #A4322A;
 
     --font-display: 'Century Gothic', CenturyGothic, 'Questrial', 'Jost', 'Avant Garde', sans-serif;
@@ -78,7 +79,7 @@
   /* ---------- Nav ---------- */
   header{
     position: sticky; top:0; z-index:50;
-    background: rgba(203,217,188,.92);
+    background: rgba(250,247,240,.95);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(51,67,27,.15);
   }
@@ -383,6 +384,18 @@
     border-top: 1px solid rgba(203,217,188,.18);
     font-size:.78rem; opacity:.7; display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5em;
   }
+  .seams-section{padding:75px 0;background:#fff;}
+  .seams-intro{max-width:750px;margin:0 auto 36px;text-align:center;}
+  .seams-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+  .seam-card{background:var(--bg);padding:25px;border-radius:14px;border-top:4px solid var(--sage);}
+  .seam-card span{font-size:.78rem;letter-spacing:.13em;color:var(--sage-deep);font-weight:700;}
+  .seam-card h3{margin:.3em 0;}
+  .community-section{padding:75px 0;}
+  .community-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+  .community-card{background:#fff;padding:28px;border-radius:16px;border:1px solid #e4e8dc;}
+  .community-card p{min-height:95px;}
+  .notice{font-size:.87rem;color:var(--olive-soft);}
+  @media(max-width:800px){.seams-grid,.community-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -417,18 +430,20 @@
   <div class="navbar">
     <a href="#home" class="brand">
       <img src="assets/logo.png" alt="Take A Menopause &amp; Breathe logo">
-      <span class="brand-text">Meno-pause<span>Take a menopause &amp; breathe</span></span>
+      <span class="brand-text">Take A Menopause &amp; Breathe<span>Coaching · Retreats · Community</span></span>
     </a>
     <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="menuToggle">
       <span></span><span></span><span></span>
     </button>
     <nav class="links" id="navLinks">
       <a href="#coaching">Coaching</a>
+      <a href="#golden-seams">Golden Seams</a>
       <a href="#retreats">Retreats</a>
+      <a href="#community">Community</a>
       <a href="#workplace">Workplace Support</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="https://calendly.com/takeamenopauseandbreathe/new-meeting" class="btn btn-primary" target="_blank" rel="noopener">Book a Call</a>
+      <a href="https://calendly.com/takeamenopauseandbreathe/where-are-you-with-your-peri-menopause" class="btn btn-primary" target="_blank" rel="noopener">Book a Clarity Call</a>
     </nav>
     <div class="nav-backdrop" id="navBackdrop"></div>
   </div>
@@ -442,12 +457,13 @@
       <div class="panel reveal">
         <div class="panel-text">
           <img class="panel-branch" src="assets/branch.png" alt="">
-          <h1 style="font-size:clamp(2.2rem,5vw,3.4rem); line-height:1;">Meno-pause</h1>
-          <p class="panel-eyebrow">Take a menopause &amp; breathe</p>
-          <p>Are you navigating the physical, emotional and mental side of menopause? You deserve calm, compassionate and practical support to help you through it. I'm Lucy — a former Advanced Skills Teacher and breast cancer survivor who's lived through menopause twice, now your qualified and certified Menopause Coach. BMI affiliate.</p>
+          <h1 style="font-size:clamp(2rem,4.8vw,3.2rem); line-height:1.12;">Menopause after cancer. You didn't choose this. You deserve support through it.</h1>
+          <p class="panel-eyebrow">A little more like yourself, at your own pace.</p>
+          <p>Cancer treatment can turn menopause into something sudden, frightening and completely unlike the gradual change you expected. Brain fog, broken sleep, anxiety, changes to your body and confidence — sometimes all at once. And if HRT isn't an option, where do you start?</p>
+          <p>I'm Lucy. I've lived through chemotherapy-induced menopause and natural menopause. I offer honest conversation, practical, individual coaching and restorative retreats for women finding their way after cancer.</p>
           <div class="panel-cta-row">
-            <a href="https://calendly.com/takeamenopauseandbreathe/new-meeting" class="btn btn-primary" target="_blank" rel="noopener">Join the retreat priority list →</a>
-            <a href="#coaching" class="btn-text">Or explore 1:1 menopause coaching</a>
+            <a href="https://calendly.com/takeamenopauseandbreathe/where-are-you-with-your-peri-menopause" class="btn btn-primary" target="_blank" rel="noopener">Book your £85 Clarity Call →</a>
+            <a href="#coaching" class="btn-text">Explore the coaching approach</a>
             <a href="#workplace" class="btn-text">Find out about business support</a>
           </div>
         </div>
@@ -478,15 +494,15 @@
       <div class="quick-grid">
         <a href="#coaching" class="quick-card reveal">
           <h3>1:1 Coaching</h3>
-          <p>The Menopause Plan — personalised coaching to help you thrive, not just survive.</p>
+          <p>Personalised support for menopause after cancer, guided by the Golden Seams System.</p>
         </a>
         <a href="#retreats" class="quick-card reveal">
           <h3>Retreats</h3>
-          <p>The Devon Retreat — find yourself in nature, over four days with other women who get it.</p>
+          <p>Small, restorative Devon retreats with gentle movement, honest conversation and space to breathe.</p>
         </a>
         <a href="#workplace" class="quick-card reveal">
           <h3>Workplace Support</h3>
-          <p>Menopause Action Plans for employers, ahead of the April 2027 requirement.</p>
+          <p>Practical talks, training and ongoing support for workplaces navigating menopause.</p>
         </a>
       </div>
     </div>
@@ -498,14 +514,13 @@
       <div class="panel flip reveal">
         <div class="panel-text">
           <img class="panel-branch" style="left:auto; right:-10px; transform:scaleX(-1);" src="assets/branch.png" alt="">
-          <h2>I can support you through menopause with <strong style="color:var(--wine);">coaching</strong></h2>
-          <p>Did you know that 1 in 10 women leave their jobs because of menopause? Or that menopause is cited as a cause in 73% of midlife divorces?</p>
-          <p>With the amount of change going on in your body through menopause, isn't it time you gave yourself the same attention we give to puberty and pregnancy? You owe it to yourself.</p>
-          <p>I will work with you through a powerful coaching plan developed by world renowned menopause coach Lauren Chiren of Women of a Certain Stage, that can transform your experience of menopause.</p>
-          <p>If brain fog has you losing words mid-sentence or forgetting why you walked into a room, you're not losing your mind — it's a recognised part of menopause, and there are practical techniques to work with it. Together, we'll also build your confidence back up and bring your anxiety down, so you feel like yourself again.</p>
-          <p>And support doesn't stop when the sessions end — you'll get follow-up check-ins to help what you've learned actually stick.</p>
+          <h2>Support that starts with <strong style="color:var(--wine);">your life</strong>, not a one-size-fits-all checklist.</h2>
+          <p>Maybe your treatment pushed you into menopause overnight. Maybe you are trying to function at work while exhausted, struggling to find words or feeling estranged from the body you know.</p>
+          <p>My Golden Seams System helps us work out what matters most, choose manageable steps and adapt them to your life, treatment history and priorities. We can explore sleep, confidence, anxiety, relationships, work and the questions you want to take to your clinical team.</p>
+          <p>Start with a 60-minute Clarity Call (£85), or explore The Menopause Plan: seven personalised coaching sessions. We work with your own pace and needs, including when hormonal treatments are not suitable.</p>
+          <p class="notice">Coaching complements, but does not replace, advice from your oncology or healthcare team. Medication and symptom-treatment decisions belong with your clinicians.</p>
           <p>Email me on <a href="mailto:takeamenopauseandbreathe@gmail.com" style="color:var(--wine); font-weight:600;">takeamenopauseandbreathe@gmail.com</a> for more information and to make a plan.</p>
-          <a href="https://calendly.com/takeamenopauseandbreathe/new-meeting" class="btn btn-primary" style="margin-top:.6em;" target="_blank" rel="noopener">Book a Menopause Clarity Call</a>
+          <a href="https://calendly.com/takeamenopauseandbreathe/where-are-you-with-your-peri-menopause" class="btn btn-primary" style="margin-top:.6em;" target="_blank" rel="noopener">Book a £85 Clarity Call</a>
         </div>
         <div class="panel-media" style="display:flex; align-items:center; justify-content:center; background:var(--cream);">
           <div style="text-align:center;">
@@ -521,6 +536,26 @@
         <img src="assets/photos/blossom-4.jpg" alt="">
         <img src="assets/photos/blossom-5.jpg" alt="">
         <img src="assets/photos/blossom-6.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- GOLDEN SEAMS -->
+  <section class="seams-section" id="golden-seams" aria-labelledby="seams-title">
+    <div class="wrap">
+      <div class="seams-intro reveal">
+        <img class="motif-wren" src="assets/wren.png" alt="" style="margin:0 auto 12px;">
+        <span class="panel-eyebrow">A framework for finding your way</span>
+        <h2 id="seams-title">The Golden Seams Coaching System</h2>
+        <p>After cancer, life may not fit back together as it did before. Kintsugi offers a gentler way to think about change: not pretending the cracks didn't happen, and not demanding that you feel grateful for them. A new wholeness can emerge on your own terms.</p>
+      </div>
+      <div class="seams-grid">
+        <div class="seam-card reveal"><span>01</span><h3>Identify</h3><p>Hear your story and recognise what's most difficult right now.</p></div>
+        <div class="seam-card reveal"><span>02</span><h3>Prioritise</h3><p>Decide what matters most, without trying to fix everything at once.</p></div>
+        <div class="seam-card reveal"><span>03</span><h3>Individualise</h3><p>Make a plan that respects your body, treatment history and circumstances.</p></div>
+        <div class="seam-card reveal"><span>04</span><h3>Implement</h3><p>Try practical, realistic changes with support and encouragement.</p></div>
+        <div class="seam-card reveal"><span>05</span><h3>Evaluate</h3><p>Notice what helps, what doesn't, and how things are changing.</p></div>
+        <div class="seam-card reveal"><span>06</span><h3>Evolve</h3><p>Adjust your approach as your needs and next chapter unfold.</p></div>
       </div>
     </div>
   </section>
@@ -568,26 +603,7 @@
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <img class="motif-branch bl" src="assets/branch.png" alt="" style="width:120px; opacity:.3;">
-    <div class="wrap">
-      <div class="grid">
-        <div class="reveal">
-          <div class="stat-num">1 in 10</div>
-          <p class="stat-label">women leave the workplace due to menopause symptoms</p>
-        </div>
-        <div class="reveal">
-          <div class="stat-num">73%</div>
-          <p class="stat-label">of midlife divorces list menopause as a contributing factor</p>
-        </div>
-        <div class="reveal">
-          <div class="stat-num">2027</div>
-          <p class="stat-label">the year Menopause Action Plans become mandatory for large employers</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Outdated statistics removed pending source review. -->
 
   <!-- ABOUT -->
   <section class="panel-section" id="about">
@@ -602,8 +618,9 @@
               <p style="margin:0; font-size:.8rem; color:var(--olive-soft); letter-spacing:.03em;">BA, PGCE, MEd, Menopause Coach Diploma</p>
             </div>
           </div>
-          <p>Welcome! I'm Lucy, your Menopause Coach. I create space for you to think about this next stage of your life — how you want to live it, and what you want from it. To thrive, not just survive.</p>
-          <p>Menopause is inevitable, how you experience it isn't. I'll support you with personalised coaching, intensive retreats, and practical workplace support.</p>
+          <p>I'm Lucy. Breast cancer treatment catapulted me into menopause, and later I experienced natural menopause too. I know what it is to feel that your body has changed the rules without asking you first.</p>
+          <p>My background in education and mentoring shapes the way I coach: listening carefully, asking honest questions and working with you on practical changes. I support women through menopause after cancer, and I also offer retreats and workplace education.</p>
+          <p>By midlife, there are no ordinary women. You don't have to be positive about what happened to you to deserve the chance to feel whole again.</p>
           <p>Contact me on <a href="mailto:takeamenopauseandbreathe@gmail.com" style="color:var(--wine); font-weight:600;">takeamenopauseandbreathe@gmail.com</a> to book a call.</p>
           <a href="#contact" class="btn btn-outline" style="margin-top:.6em;">Get in touch</a>
         </div>
@@ -620,7 +637,7 @@
       <div class="section-head reveal">
         <span class="panel-eyebrow" style="display:block;">In their words</span>
         <h2>What clients say</h2>
-        <p style="color:var(--olive-soft);">Real feedback from the women and businesses I've worked with — added here as it comes in.</p>
+        <p style="color:var(--olive-soft);">Feedback from coaching, talks and professional mentoring. Each experience is different; these words are their own.</p>
       </div>
       <div class="testi-grid">
         <div class="testi-card reveal">
@@ -638,6 +655,11 @@
           <p class="testi-text">Lucy has a natural ability to put her audience at ease with her humour and interactive approach. She was both engaging and informative, providing crucial information to the audience who left feeling empowered and inspired. One attendee said she now understood the symptoms she was experiencing and why, while another said she felt "armed with information" to help manage her own.</p>
           <p class="testi-name">— Anju Newcombe, Partner, Solicitors' Firm</p>
         </div>
+        <div class="testi-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="testi-text">She has an incredible gift for bringing out the very best in people, listening without judgment, and guiding them through difficult learning curves (both professionally and personally) with patience, clarity and humour.</p>
+          <p class="testi-name">— Barry, former trainee teacher (mentoring testimonial)</p>
+        </div>
       </div>
     </div>
   </section>
@@ -649,10 +671,10 @@
     <div class="wrap">
       <div class="section-head reveal" style="text-align:center; max-width:680px; margin:0 auto 2em; position:relative;">
         <img class="motif-wren" src="assets/wren.png" alt="" style="margin:0 auto 10px;">
-        <h2>The Devon Retreat — find yourself in nature.</h2>
+        <h2>Devon retreats — space to breathe, connect and feel more like you.</h2>
         <p class="script" style="font-size:1.6rem; margin:.2em 0 .6em;">Small hinges swing big doors.</p>
         <p style="color:var(--olive-soft);">Set deep in the Devon countryside, this retreat is about reconnecting with yourself through nature — woodland walks, log fires, wild mornings and quiet space to think, away from screens and everyday noise.</p>
-        <p style="color:var(--olive-soft);">Give yourself the time and space that you need to think about where you've been, where you are, and where you want to be — with other women experiencing the same stage of life. You are not alone.</p>
+        <p style="color:var(--olive-soft);">We offer menopause retreats, including support designed for women navigating menopause after cancer. Expect small groups, gentle movement, conversation, time to reflect and practical tools you can take home. You are not alone.</p>
         <p style="color:var(--olive-soft);">On the Devon retreat site you have the option of a croft style cottage, a luxury shepherd's hut, a log cabin or a gypsy caravan. You are welcome to bring a campervan. If the onsite accommodation is all booked you can join us as a dayboarder and we will send you a list of local places to stay.</p>
         <div class="feelings-banner">
           <span class="lead">You'll walk away feeling</span>
@@ -683,9 +705,8 @@
         <div class="reveal">
           <div class="dates-card">
             <h4>The Devon Retreat</h4>
-            <div class="date-row"><span>2–5 October</span><span class="date-tag tag-limited">Limited Availability</span></div>
-            <div class="date-row"><span>19–22 March</span><span class="date-tag tag-new">Just Announced</span></div>
-            <p class="note">More dates coming soon. Email me at <a href="mailto:takeamenopauseandbreathe@gmail.com" style="color:var(--wine); font-weight:600;">takeamenopauseandbreathe@gmail.com</a> for news.</p>
+            <p>Choose from day retreats and longer restorative stays, including Menopause Through Cancer retreats. Dates and availability are confirmed on the booking page.</p>
+            <a href="https://linktr.ee/takeamenopauseandbreathe" target="_blank" rel="noopener" class="btn btn-outline">Explore current retreat dates</a>
           </div>
           <h3 style="font-size:1.1rem; margin-top:1.6em;">You'll leave with</h3>
           <ul>
@@ -851,6 +872,26 @@
     </div>
   </section>
 
+  <!-- COMMUNITY -->
+  <section class="community-section" id="community">
+    <div class="wrap">
+      <div class="section-head reveal" style="max-width:740px;margin:0 auto 35px;text-align:center;">
+        <span class="panel-eyebrow">Stay in the conversation</span>
+        <h2>Stories, resources and women who get it</h2>
+        <p>Find an honest read, listen to a conversation, or connect with other women navigating change.</p>
+      </div>
+      <div class="community-grid">
+        <article class="community-card reveal"><h3>Read on Substack</h3><p>Personal stories, practical menopause information and the questions we should be asking — particularly after cancer.</p><a class="btn btn-outline" href="https://linktr.ee/takeamenopauseandbreathe" target="_blank" rel="noopener">Find my writing</a></article>
+        <article class="community-card reveal"><h3>Queenagers podcast</h3><p>Conversations with extraordinary women finding their kintsugi. By midlife, there are no ordinary women.</p><a class="btn btn-outline" href="https://linktr.ee/takeamenopauseandbreathe" target="_blank" rel="noopener">Find Queenagers</a></article>
+        <article class="community-card reveal"><h3>A little support, for free</h3><p>Five small steps to feel like yourself again after cancer-related menopause — a gentle starting point.</p><a class="btn btn-outline" href="https://lucent-alfajores-94a357.netlify.app" target="_blank" rel="noopener">Get the free guide</a></article>
+      </div>
+      <div style="text-align:center;margin-top:30px;">
+        <p><strong>Follow and connect</strong></p>
+        <p><a href="https://www.instagram.com/takeamenopauseandbreathe/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61587126271412" target="_blank" rel="noopener">Facebook page</a> · <a href="https://linktr.ee/takeamenopauseandbreathe" target="_blank" rel="noopener">Community links</a> · <a href="https://www.linkedin.com/in/lucy-telfer-16412733/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <img class="motif-branch bl" src="assets/branch.png" alt="" style="width:150px;">
@@ -866,7 +907,7 @@
             <li><strong>Instagram:</strong> <a href="https://www.instagram.com/takeamenopauseandbreathe/" target="_blank" rel="noopener">@takeamenopauseandbreathe</a></li>
             <li><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61587126271412" target="_blank" rel="noopener">Take A Menopause & Breathe</a></li>
           </ul>
-          <a href="https://calendly.com/takeamenopauseandbreathe/new-meeting" class="btn btn-primary" style="margin-top:1.6em;" target="_blank" rel="noopener">Book a Menopause Clarity Call</a>
+          <a href="https://calendly.com/takeamenopauseandbreathe/where-are-you-with-your-peri-menopause" class="btn btn-primary" style="margin-top:1.6em;" target="_blank" rel="noopener">Book a £85 Clarity Call</a>
         </div>
         <form class="contact-form reveal" id="contactForm">
           <h3>Send a message</h3>
